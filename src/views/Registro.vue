@@ -1,10 +1,10 @@
 <template>
     <div class="register-container">
         <div class="box-register">
-            <span class="title-register">Create Account</span>
+            <span class="title-register">Criar conta</span>
             <div class="inputs">
                 <v-text-field 
-                    label="Name" 
+                    label="Nome" 
                     type="text"
                     >
                 </v-text-field>
@@ -14,12 +14,12 @@
                     >
                 </v-text-field>
                 <v-text-field 
-                    label="Password" 
+                    label="Senha" 
                     type="password"
                     >
                 </v-text-field>
                 <v-text-field 
-                    label="Confirm Password" 
+                    label="Confirmar Senha" 
                     type="password"
                     >
                 </v-text-field>
@@ -34,9 +34,9 @@
                 size="large"
                 type="submit"
             >
-            Create Account
+            Criar
             </v-btn>
-            <router-link to="/register" class="have-acc">Already have an account? Sign in</router-link>
+            <router-link to="/login" class="have-acc">Já tem uma conta? Entrar</router-link>
         </div>
     </div>
 </template>

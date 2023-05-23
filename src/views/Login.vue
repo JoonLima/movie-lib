@@ -9,8 +9,8 @@
                     >
                 </v-text-field>
                 <v-text-field 
-                    label="Password" 
-                    type="password"
+                    label="Senha" 
+                    type="senha"
                     >
                 </v-text-field>
             </div>
@@ -21,9 +21,9 @@
                 size="large"
                 type="submit"
             >
-            Login
+            Entrar
             </v-btn>
-            <router-link to="/register" class="create-acc">Create an Account</router-link>
+            <router-link to="/registro" class="create-acc">Criar uma conta</router-link>
         </div>
     </div>
 </template>
@@ -56,7 +56,7 @@ export default {
     border-radius: 15px;
     background-color: var(--cor-primaria);
     color: #fff;
-    height: 28rem;
+    height: 25rem;
     width: 25rem;
     display: flex;
     text-align: center;

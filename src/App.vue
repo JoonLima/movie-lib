@@ -1,6 +1,6 @@
 <template>
   <div class="app">
-    <nav-bar/>
+    <nav-bar v-if="checkRoute" />
     <router-view/>
   </div>
 </template>
@@ -16,6 +16,18 @@ export default {
   data: () => ({
     //
   }),
+
+  computed:{
+    checkRoute(){
+      if(this.$route.name == 'login'){
+        return false
+      }else if(this.$route.name == 'registro'){
+        return false
+      }else{
+        return true
+      }
+    }
+  }
 }
 </script>
 
