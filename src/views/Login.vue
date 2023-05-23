@@ -1,18 +1,44 @@
 <template>
     <div class="login-container">
         <div class="box-login">
-            <label>
-                Your email
-                <input class="input-login" type="email">
-            </label>
+            <span class="title-login">MovieLib</span>
+            <div class="inputs">
+                <v-text-field 
+                    label="Email" 
+                    type="email"
+                    >
+                </v-text-field>
+                <v-text-field 
+                    label="Password" 
+                    type="password"
+                    >
+                </v-text-field>
+            </div>
             
+            <v-btn
+                class="btn-login"
+                color="#E7FF2C"
+                size="large"
+                type="submit"
+            >
+            Login
+            </v-btn>
+            <router-link to="/register" class="create-acc">Create an Account</router-link>
         </div>
     </div>
 </template>
 
 <script>
 export default {
-    
+    data() {
+        return {
+            email: null,
+            password: null,
+        }
+    },
+    methods:{
+        
+    }
 }
 </script>
 
@@ -33,8 +59,32 @@ export default {
     height: 28rem;
     width: 25rem;
     display: flex;
-    justify-content: center;
+    text-align: center;
+    flex-direction: column;    
+    padding: 35px;
 }
+
+.box-login .title-login{
+    font-size: 2rem;
+    padding: .5rem;
+    color: var(--cor-secundaria);
+}
+
+.btn-login{
+    margin-top: 15px;
+    margin-bottom: 15px;
+    color: var(--cor-primaria);
+}
+
+.create-acc{
+    color: #fff;
+    transition: .4s;
+}
+
+.create-acc:hover{
+    color: #ccc;
+}
+
 
 .input-login{
     border: 1px solid var(--cor-secundaria);
