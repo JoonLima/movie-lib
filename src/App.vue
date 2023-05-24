@@ -1,52 +1,54 @@
 <template>
   <div class="app">
     <nav-bar v-if="checkRoute" />
-    <router-view/>
+    <router-view />
   </div>
 </template>
 
 <script>
-import NavBar from '@/components/NavBar.vue'
+import NavBar from "@/components/NavBar.vue";
 
 export default {
-  name: 'App',
+  name: "App",
 
-  components: {NavBar},
+  components: { NavBar },
 
   data: () => ({
     //
   }),
 
-  computed:{
-    checkRoute(){
-      if(this.$route.name == 'login'){
-        return false
-      }else if(this.$route.name == 'registro'){
-        return false
-      }else{
-        return true
+  computed: {
+    checkRoute() {
+      if (this.$route.name == "login") {
+        return false;
+      } else if (this.$route.name == "registro") {
+        return false;
+      } else {
+        return true;
       }
-    }
-  }
-}
+    },
+  },
+};
 </script>
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500&display=swap");
 
-*{
-  font-family: 'Poppins', sans-serif;
+* {
+  font-family: "Poppins", sans-serif;
 }
 
-.app{
+body {
   background-color: var(--cor-primaria);
 }
 
-:root{
-  --cor-primaria: #322F2F;
-  --cor-menu: #272424;
-  --cor-secundaria: #E7FF2C;
+.app {
+  background-color: var(--cor-primaria);
 }
 
-
+:root {
+  --cor-primaria: #322f2f;
+  --cor-menu: #272424;
+  --cor-secundaria: #e7ff2c;
+}
 </style>

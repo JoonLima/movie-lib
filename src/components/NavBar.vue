@@ -3,7 +3,7 @@
         <div class="links">
             <router-link class="logo" to="/">MovieLib</router-link>
             <router-link class="link" to="/">Home</router-link>
-            <router-link class="link" to="/filmes">Movies</router-link>
+            <router-link class="link" to="/filmes">Filmes</router-link>
             <router-link class="link" to="/series">Series</router-link>
             <router-link class="link" to="/favoritos">Meus Favoritos</router-link>
         </div>
