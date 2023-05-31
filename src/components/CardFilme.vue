@@ -1,60 +1,82 @@
 <template>
-  <v-card class="mx-auto my-12 card" min-width="300" max-width="300">
-    <v-img
-      cover
-      height="250"
-      src="https://cdn.vuetifyjs.com/images/cards/cooking.png"
-    ></v-img>
-
-    <v-card-item>
-      <v-card-title>{{ oFilme.title }}</v-card-title>
-
-      <v-card-subtitle>
-        <span class="me-1">Gênero</span>
-
-        <v-icon color="error" icon="mdi-fire-circle" size="small"></v-icon>
-      </v-card-subtitle>
-    </v-card-item>
-
-    <v-card-text>
-      <v-row align="center" class="mx-0">
-        <v-rating
-          :model-value="4.5"
-          color="amber"
-          density="compact"
-          half-increments
-          readonly
-          size="small"
-        ></v-rating>
-
-        <div class="text-grey ms-4">4.5 (413)</div>
-      </v-row>
-    </v-card-text>
-
-    <v-divider class="mx-4 mb-1"></v-divider>
-    <v-card-actions>
-      <v-btn class="btn-detalhes" width="100%" size="large" variant="text"
-        >Detalhes</v-btn
-      >
-    </v-card-actions>
-  </v-card>
+  <div class="card-box">
+    <img :src="imagem" alt="imagem" />
+    <span class="titulo">
+      {{ oFilme.title }}
+    </span>
+    <span class="nota">
+      <v-icon class="star-icon" icon="mdi-star" />
+      {{ oFilme.vote_average }} ({{ oFilme.vote_count }})</span
+    >
+    <button class="btn-detalhes" @click="irParaDetalhes">Detalhes</button>
+  </div>
 </template>
 
 <script>
 export default {
-  props: ["oFilme"],
+  props: ["oFilme", "imagem"],
+  methods: {
+    irParaDetalhes() {
+      this.$router.push({ path: `detalhes/${this.oFilme.id}` });
+    },
+  },
 };
 </script>
 
 <style scoped>
-.btn-detalhes {
-  color: var(--cor-primaria);
-  background-color: var(--cor-secundaria);
+.card-box {
+  width: 30%;
+  color: #fff;
+  margin-bottom: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: var(--cor-menu);
+  padding: 1rem;
 }
 
-.card {
-  background-color: var(--cor-primaria);
+.titulo {
+  font-size: 1.3rem;
+}
+
+.card-box img {
+  max-width: 100%;
+}
+
+.card-box img,
+.card-box span {
+  margin-bottom: 1rem;
+}
+
+.nota {
+  display: flex;
+  gap: 5px;
+}
+
+.star-icon {
+  color: var(--cor-secundaria);
+  font-size: 1.4rem;
+}
+
+.btn-detalhes {
+  background-color: var(--cor-secundaria);
+  border: 2px solid var(--cor-secundaria);
+  border-radius: 4px;
+  color: var(--cor-menu);
+  padding: 1rem 0.5rem;
+  align-items: center;
+  text-align: center;
+  font-weight: bold;
+  text-decoration: none;
+  transition: 0.4s;
+}
+
+.btn-detalhes:hover {
+  background-color: transparent;
+  color: var(--cor-secundaria);
+}
+
+.card-box .titulo {
   color: #fff;
-  border: 1px solid var(--cor-secundaria);
 }
 </style>

@@ -1,8 +1,13 @@
 <template>
   <div class="container">
-    <h3>Filmes</h3>
-    <div class="cards">
-      <card-filme v-for="filme in filmes" :key="filme.id" :oFilme="filme" />
+    <h3>Filmes mais populares</h3>
+    <div class="container-filme">
+      <card-filme
+        v-for="filme in filmes"
+        :key="filme.id"
+        :oFilme="filme"
+        :imagem="`https://image.tmdb.org/t/p/w500${filme.poster_path}`"
+      />
     </div>
   </div>
 </template>
@@ -16,6 +21,7 @@ export default {
   data() {
     return {
       filmes: [],
+      img: "",
     };
   },
   methods: {
@@ -24,9 +30,14 @@ export default {
         .obterTodos()
         .then((res) => {
           this.filmes = res.data.results;
-          console.log(res.data.results);
         })
-        .catch();
+        .catch((err) => {
+          console.log(err);
+        });
+    },
+
+    obterImagem(idImagem) {
+      return `https://image.tmdb.org/t/p/w500${idImagem}`;
     },
   },
   mounted() {
@@ -43,9 +54,12 @@ export default {
   padding-top: 3rem;
 }
 
-.cards {
+.container-filme {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 </style>
