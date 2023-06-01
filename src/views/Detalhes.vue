@@ -198,4 +198,9 @@ export default {
   height: 35px;
   margin-right: 5px;
 }
+
+.loading {
+  color: #fff;
+  text-align: center;
+}
 </style>

@@ -5,7 +5,7 @@
       <router-link class="link" to="/">Home</router-link>
       <router-link class="link" to="/populares">Filmes Populares</router-link>
       <router-link class="link" to="/melhores">Melhores filmes</router-link>
-      <!-- <router-link class="link" to="/favoritos">Meus Favoritos </router-link> -->
+      <router-link class="link" to="/favoritos">Meus Favoritos </router-link>
     </div>
     <div class="search">
       <v-text-field
@@ -19,12 +19,12 @@
         v-on:keyup.enter="enviarPesquisa"
       ></v-text-field>
     </div>
-    <!-- <div class="login">
+    <div class="login">
       <router-link class="btn login-btn" to="/login">Login</router-link>
       <router-link class="btn register-btn" to="/registro"
         >Registro</router-link
       >
-    </div> -->
+    </div>
   </nav>
 </template>
 
