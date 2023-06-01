@@ -36,9 +36,19 @@ function obterOndeAssistir(id) {
   });
 }
 
+function obterPesquisa(query) {
+  return new Promise((resolve, reject) => {
+    return movieApi
+      .get(`search/movie?query=${query}&language=pt-BR`)
+      .then((response) => resolve(response))
+      .catch((error) => reject(error));
+  });
+}
+
 export default {
   obterTodos,
   obterTodosTopRated,
   obterDetalhes,
   obterOndeAssistir,
+  obterPesquisa,
 };

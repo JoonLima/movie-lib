@@ -85,7 +85,6 @@ export default {
         .obterOndeAssistir(this.id)
         .then((res) => {
           this.ondeAssistir = res.data.results.BR.flatrate;
-          console.log(this.ondeAssistir);
         })
         .catch((err) => console.log(err));
     },

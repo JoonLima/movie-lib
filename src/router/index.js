@@ -6,6 +6,7 @@ import Populares from "@/views/Populares.vue";
 import Melhores from "@/views/Melhores.vue";
 import Favoritos from "@/views/Favoritos.vue";
 import Detalhes from "@/views/Detalhes.vue";
+import Pesquisa from "@/views/Pesquisa.vue";
 
 const routes = [
   {
@@ -33,6 +34,11 @@ const routes = [
     name: "detalhes",
     component: Detalhes,
     props: true,
+  },
+  {
+    path: "/pesquisa",
+    name: "pesquisa",
+    component: Pesquisa,
   },
   {
     path: "/login",

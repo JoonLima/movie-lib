@@ -15,7 +15,8 @@
         append-inner-icon="mdi-magnify"
         single-line
         hide-details
-        @click:append-inner="onClick"
+        v-model="pesquisa"
+        v-on:keyup.enter="enviarPesquisa"
       ></v-text-field>
     </div>
     <!-- <div class="login">
@@ -28,7 +29,22 @@
 </template>
 
 <script>
-export default {};
+export default {
+  data() {
+    return {
+      pesquisa: "",
+    };
+  },
+
+  methods: {
+    enviarPesquisa() {
+      this.$store.state.conteudoPesquisa = this.pesquisa;
+      if (this.$route.name !== "pesquisa")
+        this.$router.push({ path: "pesquisa" });
+      this.pesquisa = "";
+    },
+  },
+};
 </script>
 
 <style scoped>
