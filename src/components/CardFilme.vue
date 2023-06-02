@@ -6,8 +6,8 @@
     </span>
     <span class="nota">
       <v-icon class="star-icon" icon="mdi-star" />
-      {{ oFilme.vote_average.toFixed(1) }} ({{ oFilme.vote_count }})</span
-    >
+      {{ oFilme.vote_average.toFixed(1) }} ({{ oFilme.vote_count }})
+    </span>
     <button class="btn-detalhes" @click="irParaDetalhes">Detalhes</button>
   </div>
 </template>

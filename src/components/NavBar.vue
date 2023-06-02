@@ -5,7 +5,6 @@
       <router-link class="link" to="/">Home</router-link>
       <router-link class="link" to="/populares">Filmes Populares</router-link>
       <router-link class="link" to="/melhores">Melhores filmes</router-link>
-      <router-link class="link" to="/favoritos">Meus Favoritos </router-link>
     </div>
     <div class="search">
       <v-text-field
@@ -18,12 +17,6 @@
         v-model="pesquisa"
         v-on:keyup.enter="enviarPesquisa"
       ></v-text-field>
-    </div>
-    <div class="login">
-      <router-link class="btn login-btn" to="/login">Login</router-link>
-      <router-link class="btn register-btn" to="/registro"
-        >Registro</router-link
-      >
     </div>
   </nav>
 </template>
@@ -75,32 +68,8 @@ export default {
   margin: 1.7rem;
 }
 
-.login {
-  display: flex;
-  align-items: center;
-}
-
-.login .btn {
-  text-decoration: none;
-  color: #fff;
-  padding: 7px;
-  margin: 1.2rem;
-  transition: 0.4s;
-}
-.link:hover,
-.login .login-btn:hover {
+.link:hover {
   color: #b6b4b4;
-}
-
-.register-btn {
-  border-radius: 10px;
-  border: 1px solid var(--cor-secundaria);
-  transition: 0.4s;
-}
-
-.register-btn:hover {
-  background-color: var(--cor-secundaria);
-  color: var(--cor-primaria);
 }
 
 .search {
