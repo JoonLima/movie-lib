@@ -20,7 +20,6 @@ export default createStore({
         .obterPesquisa(state.conteudoPesquisa)
         .then((res) => {
           state.filmesPesquisa = res.data.results;
-          console.log(res.data);
         })
         .catch((err) => console.log(err));
     },

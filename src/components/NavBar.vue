@@ -32,8 +32,8 @@ export default {
   methods: {
     enviarPesquisa() {
       this.$store.state.conteudoPesquisa = this.pesquisa;
-      if (this.$route.name !== "pesquisa")
-        this.$router.push({ path: "pesquisa" });
+      if (this.$route.name !== "/pesquisa")
+        this.$router.push({ path: "/pesquisa" });
       this.pesquisa = "";
     },
   },
