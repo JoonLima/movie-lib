@@ -62,4 +62,11 @@ export default {
   max-width: 1200px;
   margin: 0 auto;
 }
+
+@media (max-width: 764px) {
+  .container-filme {
+    flex-direction: column;
+    align-items: center;
+  }
+}
 </style>

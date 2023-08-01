@@ -79,4 +79,16 @@ export default {
 .card-box .titulo {
   color: #fff;
 }
+
+@media (max-width: 995px) {
+  .card-box {
+    width: 45%;
+  }
+}
+
+@media (max-width: 764px) {
+  .card-box {
+    width: 100%;
+  }
+}
 </style>

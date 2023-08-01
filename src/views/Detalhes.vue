@@ -144,6 +144,7 @@ export default {
   display: flex;
   gap: 0.5rem;
   color: #ddd;
+  flex-wrap: wrap;
 }
 
 .over {
@@ -202,5 +203,11 @@ export default {
 .loading {
   color: #fff;
   text-align: center;
+}
+
+@media (max-width: 1000px) {
+  .container {
+    flex-direction: column;
+  }
 }
 </style>
